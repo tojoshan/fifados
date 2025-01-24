@@ -1,0 +1,23 @@
+fifados/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── profile/
+│   │   │   └── page.tsx
+│   │   └── stats/
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── MatchForm.tsx
+│   │   ├── StatsCard.tsx
+│   │   └── UserProfile.tsx
+│   ├── lib/
+│   │   ├── firebase.ts
+│   │   └── hooks/
+│   │       ├── useAuth.ts
+│   │       └── useMatches.ts
+│   └── types/
+│       └── index.ts
+├── public/
+├── next.config.js
+└── tailwind.config.ts

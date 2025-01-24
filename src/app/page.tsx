@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     if (user) {
-      router.push('/dashstats');
+      router.push('/stats');
     }
   }, [user, router]);
 
@@ -17,7 +17,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center max-w-2xl mx-auto p-4">
         <h1 className="text-4xl font-bold mb-6">
-          Bienvenido a Fifados
+          Bienvenido a FIFA2
         </h1>
         <p className="text-xl text-gray-600 mb-8">
           Registra tus partidos de FIFA y compite con tus amigos

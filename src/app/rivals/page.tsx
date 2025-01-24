@@ -8,9 +8,6 @@ import {
   where, 
   getDocs, 
   addDoc,
-  updateDoc,
-  doc,
-  getDoc 
 } from 'firebase/firestore';
 import Spinner from '@/components/Spinner';
 

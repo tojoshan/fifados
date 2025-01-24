@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { useAuthContext } from '@/context/AuthContext';
 import { updatePassword } from 'firebase/auth';
-import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+// import { doc, updateDoc } from 'firebase/firestore';
+// import { db } from '@/lib/firebase';
 
 export default function ProfilePage() {
   const { user } = useAuthContext();

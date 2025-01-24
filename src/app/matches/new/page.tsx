@@ -24,9 +24,8 @@ export default function NewMatchPage() {
   const [rivalTeam, setRivalTeam] = useState('');
   const [myGoals, setMyGoals] = useState('');
   const [rivalGoals, setRivalGoals] = useState('');
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [showModal, setShowModal] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filteredRivals, setFilteredRivals] = useState<Rival[]>([]);
   const [frequentRivals, setFrequentRivals] = useState<Rival[]>([]);
@@ -119,38 +118,39 @@ export default function NewMatchPage() {
     loadFrequentRivals();
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setError('');
 
-    if (!selectedRival || !myTeam || !rivalTeam || !myGoals || !rivalGoals) {
-      setError('Todos los campos son obligatorios');
-      return;
-    }
+  //   if (!selectedRival || !myTeam || !rivalTeam || !myGoals || !rivalGoals) {
+  //     setError('Todos los campos son obligatorios');
+  //     return;
+  //   }
 
-    try {
-      const match = {
-        date: new Date().toISOString(),
-        participants: [user?.uid, selectedRival].sort(),
-        player1: {
-          userId: user?.uid,
-          team: myTeam,
-          goals: parseInt(myGoals)
-        },
-        player2: {
-          userId: selectedRival,
-          team: rivalTeam,
-          goals: parseInt(rivalGoals)
-        },
-        winner: parseInt(myGoals) > parseInt(rivalGoals) ? user?.uid : selectedRival
-      };
+  //   try {
+  //     const match = {
+  //       date: new Date().toISOString(),
+  //       participants: [user?.uid, selectedRival].sort(),
+  //       player1: {
+  //         userId: user?.uid,
+  //         team: myTeam,
+  //         goals: parseInt(myGoals)
+  //       },
+  //       player2: {
+  //         userId: selectedRival,
+  //         team: rivalTeam,
+  //         goals: parseInt(rivalGoals)
+  //       },
+  //       winner: parseInt(myGoals) > parseInt(rivalGoals) ? user?.uid : selectedRival
+  //     };
 
-      await addDoc(collection(db, 'matches'), match);
-      router.push('/stats');
-    } catch (error) {
-      setError('Error al registrar el partido');
-    }
-  };
+  //     await addDoc(collection(db, 'matches'), match);
+  //     router.push('/stats');
+  //   } catch (error) {
+  //     setError('Error al registrar el partido');
+  //   }
+  // };
+  
 
   if (loading) return <Spinner />;
 
@@ -282,9 +282,9 @@ export default function NewMatchPage() {
             </div>
           </div>
 
-          {error && (
+          {/* {error && (
             <p className="text-red-500 text-sm">{error}</p>
-          )}
+          )} */}
 
           <button type="submit" className="btn-primary w-full">
             Registrar Partido
